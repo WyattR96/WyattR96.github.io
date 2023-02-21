@@ -1,9 +1,20 @@
-Division of Work
+TODO:
 
-Caleb Larios:
+Create main page html
+Create main page css
+Create main page javascript
 
-Cierra Armijo:
+Create checkout page html
+Create checkout page css
+Create checkout page javascript
 
-Devis Cheruiyot:
+Create login page html
+Create login page css
+Create login page javascript
+Simulate manager and client login using JSON
 
-Wyatt Robinson:
+Create item management page html
+Create item management page css
+Create item management page javascript
+
+Create Execution.pdf with screenshots of the pages
