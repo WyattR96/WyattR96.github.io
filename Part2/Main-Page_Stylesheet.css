@@ -19,7 +19,7 @@ h2{
 
 
 .header{
-    background-image: url("main_images/header.jpg");
+    background-image: url("Media/main_images/header.jpg");
     height:250px;
 }
 
@@ -27,7 +27,7 @@ h2{
 
 .main_body{
     background-color: aquamarine;
-    background-image: url("main_images/background.jpg");
+    background-image: url("Media/main_images/background.jpg");
 }
 
 .image{
