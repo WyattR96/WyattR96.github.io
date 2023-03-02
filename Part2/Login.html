@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Login-Stylesheet.css">
     <title>Login</title>
+    <script src="Login.js"></script>
 </head>
 <body>
     <nav>
@@ -16,12 +17,12 @@
         </ul>
     </nav>
 
-    <section>
+    <section id="section1">
         <p>UserName</p>
-        <input type="text" class="form-control">
+        <input type="text" name="User" id="User">
         <p>Password</p>
-        <input type="password" class="form-control">
-        <p><button>Login</button></p>
+        <input type="password" name="Pass" id="Pass">
+        <p><button type="submit" onclick="login()">Login</button></p>
     </section>
 </body>
 </html>
