@@ -1,3 +1,4 @@
+
 function login(){
 
     //These two variables create the mock databases to be used for the login system.
@@ -23,7 +24,7 @@ function login(){
     //an entry in the mock database. It goes about this in a very janky way I might add.
     for(var i = 0;i<=4;i++){
         if(i===4){
-            alert("Incorrect Username or Passowrd");
+            alert("Incorrect Username or Passoword");
             break;
         }
         if(name===json.Employees[i].UserName && pass===json.Employees[i].Password){
