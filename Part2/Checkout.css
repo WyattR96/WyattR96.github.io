@@ -1,7 +1,7 @@
 body{
     background-image: url("Media/main_images/Publix-Ice-Cream-Featured.jpeg");
     height: fit-content;
-    background-size: 1500px;
+    background-size: 1700px;
     padding: 20px;
 }
 h2{
@@ -25,6 +25,7 @@ h1{
     text-align: center;
     color: whitesmoke;
     margin-bottom: 30px;
+    margin-top: 20px;
     font-weight: 500;
     border-radius:10px;
     border-color:#e31616;
