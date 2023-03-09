@@ -1,0 +1,80 @@
+body{
+    background-image: url("Media/main_images/Publix-Ice-Cream-Featured.jpeg");
+    height: fit-content;
+    background-size: 1500px;
+    padding: 20px;
+}
+h2{
+    margin: auto;
+    background-color: rgb(74, 5, 83);
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 15px;
+    width: max-content;
+    font-weight: 500;
+    border-radius:10px;
+    border-color:#e31616;
+    border-width:1px;
+    box-shadow:  4px 4px 9px #d7d7d780,
+    -4px -4px 9px #dfdede75;
+}
+h1{
+    margin: auto;
+    font-style: oblique;
+    background-color: darkmagenta;
+    text-align: center;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    font-weight: 500;
+    border-radius:10px;
+    border-color:#e31616;
+    border-width:1px;
+    box-shadow:  4px 4px 9px #d7d7d780,
+    -4px -4px 9px #dfdede75;
+}
+
+.header{
+    font-family: sans-serif;
+}
+.ContactInfo{
+    margin: auto;
+    background-image: url("Media/main_images/various-varieties-ice-cream-cones-mint-blueberry-strawberry-pistachio-cherry-chocolate-isolated-white-background-158155276.jpeg");
+    font-family: sans-serif;
+    width: 500px;
+    background-size: 100px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    box-shadow:  4px 4px 9px #d7d7d780,
+    -4px -4px 9px #dfdede75;
+}
+
+.PaymentInfo{
+    margin: auto;
+    font-family: sans-serif;
+    background-image: url("Media/main_images/132408_shutterstock_406445776.jpeg");
+    width: 500px;
+    text-align: center;
+    background-size: 100px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    box-shadow:  4px 4px 9px #d7d7d780,
+    -4px -4px 9px #dfdede75;
+}
+p{
+    background-color: rgb(178, 96, 109) ;
+    color: whitesmoke;
+    width: 35%;
+    text-align: center;
+    text-decoration: wavy;
+    margin: auto;
+    margin-bottom: 10px;
+    font-weight: 500;
+    box-shadow:  4px 4px 9px #d7d7d780,
+    -4px -4px 9px #dfdede75;
+}
+input{
+    margin-bottom: 10px;
+}
+div{
+    text-align: center;
+}
