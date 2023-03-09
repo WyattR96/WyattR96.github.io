@@ -13,10 +13,6 @@ TODO:
 Create main page html
 Create main page css
 
-Create checkout page html
-Create checkout page css
-
-
 Create item management page html
 Create item management page css
 
