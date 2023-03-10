@@ -9,8 +9,8 @@ Created Checkout page html
 Created Checkout page css
 
 Devis Cheruiyot:
-Create item management page html
-Create item management page css
+Created item management page html
+Created item management page css
 
 To Do:
 Create main page html
