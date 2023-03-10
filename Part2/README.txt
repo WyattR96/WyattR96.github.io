@@ -8,12 +8,13 @@ Caleb Larios:
 Created Checkout page html
 Created Checkout page css
 
-TODO:
+Devis Cheruiyot:
+Create item management page html
+Create item management page css
 
+To Do:
 Create main page html
 Create main page css
 
-Create item management page html
-Create item management page css
 
 Create Execution.pdf with screenshots of the pages
