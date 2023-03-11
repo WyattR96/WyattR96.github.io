@@ -12,7 +12,7 @@ Devis Cheruiyot:
 Created item management page html
 Created item management page css
 
-To Do:
+Cierra Armijo:
 Create main page html
 Create main page css
 
