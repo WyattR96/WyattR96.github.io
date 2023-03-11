@@ -158,8 +158,7 @@ ul {
     border:1px,solid;
     border-radius: 1rem;
     background: #e8e8e8;
-    box-shadow: 20px 20px 60px #c5c5c5,
-           -20px -20px 60px #ffffffcb;
+    
     transition: 0.3s;
     font-family:Arial, Helvetica, sans-serif;
     font-size: large;
