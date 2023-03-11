@@ -2,7 +2,6 @@ Wyatt Robinson:
 Created login page html
 Created login page CSS
 Created javascript for login page
-Created login system for managers
 
 Caleb Larios:
 Created Checkout page html
