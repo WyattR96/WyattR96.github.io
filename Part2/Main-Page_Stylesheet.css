@@ -151,3 +151,45 @@ ul {
     box-shadow: inset 4px 4px 12px #c5c5c5,
                   inset -4px -4px 12px #ffffff;
   }
+
+  input {
+    
+    padding: 1rem;
+    border:1px,solid;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #c5c5c5,
+           -20px -20px 60px #ffffffcb;
+    transition: 0.3s;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: large;
+    width: 50%;
+}
+   
+input:focus {
+    outline-color: #e8e8e8;
+    background: #f6f8d8;
+    
+    transition: 0.3s;
+}
+
+button {
+  
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 2px solid #000000;
+    transition: all .3s;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    width:40%
+}
+   
+   button:active {
+    color: #666;
+    box-shadow: inset 4px 4px 12px #c5c5c5,
+                inset -4px -4px 12px #ffffff;
+}
