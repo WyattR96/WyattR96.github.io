@@ -56,15 +56,15 @@ td button {
     padding: 5px;
     margin: 0;
     border: none;
-    background-color: #4CAF50;
+    background-color: #eff0efd3;
     color: white;
     cursor: pointer;
     font-size: 16px;
     border-radius: 5px;
 }
 
-td button.add {
-    background-color: #4CAF50;
+td button.update {
+    background-color: #eff0efd3;
 }
 
 td button.delete {
@@ -76,5 +76,5 @@ td button:hover {
 }
 
 td button.add{
-    background-color:rgb(47, 211, 47);
+    background-color:#4CAF50;
 }
