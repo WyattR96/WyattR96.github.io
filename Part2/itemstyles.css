@@ -1,3 +1,7 @@
+*{
+    font-family:Arial, Helvetica, sans-serif
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -69,4 +73,8 @@ td button.delete {
 
 td button:hover {
     opacity: 0.8;
+}
+
+td button.add{
+    background-color:rgb(47, 211, 47);
 }
