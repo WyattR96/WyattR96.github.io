@@ -1,0 +1,24 @@
+•Implement the functionality for the client section, including:
+
+        ▪ adding flavors to the cart
+
+        ▪ calculating the total cost
+
+        ▪ submitting orders
+
+        ▪ validate user input, such as checking that required fields are filled out, and ensuring that data is in the correct format.
+
+•For the management section:
+
+        ▪ implementing the login system
+
+        ▪ page(s) for adding, editing, and deleting flavors,
+
+        ▪ page(s) for viewing and managing orders.
+
+
+•Add client and management pages to 000webhost repository
+
+•Create a README.txt in the corresponding GitHub folder with the work allocation
+
+• Create a PDF file “Execution.pdf”
