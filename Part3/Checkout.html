@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="Main-Page_Stylesheet.css">
+    <link rel="stylesheet" href="Checkout.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Main-Page.html">Home</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
+            <li Style="float:right"><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <h1>Selected Items:</h1>
+
+    <div class="SelectedItems">
+        <p id="cart"></p>
+        <p id="cart_total"></p>
+    </div>
+
+    <h1>Checkout</h1>
+
+    <div class="ContactInfo">
+        <h2>Contact Information</h2>
+        <p>Name</p>
+        <input type="text" name="Name" id="Name">
+        <p>Address</p>
+        <input type="text" name="Address" id="Address">
+        <p>Email</p>
+        <input type="email" name="Email" id="Email">
+        <p>Phone Number</p>
+        <input type="tel" name="Phone" id="Phone">
+
+    </div>
+
+    <div class="PaymentInfo">
+        <h2>Payment Information</h2>
+        <p>Name on Card</p>
+        <input type="text" name="CardName" id="CardName">
+        <p>Card Numbers (16-didgits)</p>
+        <input type="number" maxlength="16" name="CardNum" id="CardNum">
+        <p>Experation date</p>
+        <input type="month" name="CardExpDate" id="CardExpDate">
+        <p>Security Code (3-digits)</p>
+        <input type="number" maxlength="3" name="SecCode" id="SecCode">
+    </div>
+
+    <div class="Cont">
+        <p><button type="submit" id="submitButton" >Continue</button></p>
+
+    </div>
+    
+    <script>
+        let selectedItems = JSON.parse(localStorage.getItem('selectedItems'));
+        let items_array = [];
+        let cart_total = 0;
+        for (s of selectedItems){
+            items_array.push(s.id);
+            cart_total += 1.99;
+        }
+        document.getElementById('cart').textContent = items_array;
+        document.getElementById('cart_total').textContent = "Cart total: $"+ cart_total;
+
+    </script>
+
+
+</body>
+</html>
