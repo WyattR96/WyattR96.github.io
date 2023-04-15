@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Main-Page_Stylesheet.css">
 </head>
 <body>
-    
+
     <nav>
         <ul>
             <li><a href="Main-Page.html">Home</a></li>
@@ -28,84 +28,17 @@
         <p id="price">One cone with one scoop: $1.99</p>
     </div>
 
-    <div class="main_body" >
-
-
-    <div class="image" id="Blackberry">
-        <img class="img" src="main_images/blackberry.jpg" alt="blackberry">
-        <div class="image_overlay"> 
-            <button class="flavor">Blackberry</button>
-         </div>
-    </div>
-
-    <div class="image" id="Chocolate">
-        <img class="img" src="main_images/chocolate.jpg" alt="chocolate">
-        <div class="image_overlay">
-             <button class="flavor">Chocolate</button>
-        </div>
-    </div>
-
-    <div class="image" id="Cookies & Cream">
-        <img class="img" src="main_images/cookies.jpg" alt="cookies and cream">
-        <div class="image_overlay">
-            <button class="flavor">Cookies & Cream</button>
-        </div>
-    </div>
-        
-    <br>
-
-    <div class="image" id="Cotton Candy">
-        <img class="img" src="main_images/cotton_candy.jpg" alt="cotton candy">
-        <div class="image_overlay">
-            <button class="flavor">Cotton Candy</button>
-        </div>
-    </div>
-
-    <div class="image" id="Mango">
-        <img class="img" src="main_images/mango.jpg" alt="mango">
-        <div class="image_overlay">
-            <button class="flavor">Mango</button>
-        </div>
-    </div>
-
-    <div class="image" id="Pistachio">
-        <img class="img" src="main_images/pistachio.jpg" alt="pistachio">
-        <div class="image_overlay">
-            <button class="flavor">Pistachio</button>
-        </div>
-    </div>
-        
-    <br>
-  
-    <div class="image" id="Toffee">
-        <img class="img" src="main_images/toffee.jpg" alt="toffee">
-        <div class="image_overlay">
-            <button class="flavor">Toffee</button>
-        </div>
-    </div>
-
-    <div class="image" id="Strawberry">
-        <img class="img" src="main_images/strawberry.jpg" alt="strawberry">
-        <div class="image_overlay">
-            <button class="flavor">Strawberry</button>
-        </div>
-    </div>
-
-    <div class="image" id="Vanilla">
-        <img class="img" src="main_images/vanilla.jpg" alt="vanilla">
-        <div class="image_overlay">
-            <button class="flavor">Vanilla</button>
-        </div>
-    </div>
+    <div class="main_body" id="main_body">
     
-    <div>
-        <button id="submit">Send To Cart</button>
+
     </div>
 
+    <div class="main_body">
+        <button id="submit" onclick="sentToCart()">Send To Cart</button>
     </div>
     </center>
 
-    <script>
+    <!-- <script>
 
         items = [];  //array to store selected flavors
         let btns = document.querySelectorAll("button.flavor"); //selecting buttons w/ class "flavor"
@@ -113,7 +46,7 @@
         function sentToCart(){  //sending selected flavor to cart by writing to JSON file
            let data = JSON.stringify(items);  //converting to string
            localStorage.setItem('selectedItems', data);
-           window.location.href = 'Checkout.html';
+           window.location.href = 'checkout.html';
        }
 
         for (let btn of btns){    //adding event handler to each flavor button
@@ -128,8 +61,9 @@
        let submit_btn = document.querySelector("#submit");
        submit_btn.addEventListener("click", sentToCart)
 
-    </script>
-
+    </script> -->
+    
+    <script src="Main-Page.js"></script>
 
 </body>
 </html>
