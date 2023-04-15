@@ -3,54 +3,54 @@ window.onload = function() {
     listFlavors();
  };
 
-const flavors = [];
-// const flavors = [
-//     {
-//         id: 0,
-//         name: "Blackberry",
-//         imgUrl: "main_images/blackberry.jpg"
-//     },
-//     {
-//         id: 1,
-//         name: "Chocolate",
-//         imgUrl: "main_images/chocolate.jpg"
-//     },
-//     {
-//         id: 2,
-//         name: "Cookies & Cream",
-//         imgUrl: "main_images/cookies.jpg"
-//     },
-//     {
-//         id: 3,
-//         name: "Cotton Candy",
-//         imgUrl: "main_images/cotton_candy.jpg"
-//     },
-//     {
-//         id: 4,
-//         name: "Mango",
-//         imgUrl: "main_images/mango.jpg"
-//     },
-//     {
-//         id: 5,
-//         name: "Pistachio",
-//         imgUrl: "main_images/pistachio.jpg"
-//     },
-//     {
-//         id: 6,
-//         name: "Toffee",
-//         imgUrl: "main_images/toffee.jpg"
-//     },
-//     {
-//         id: 7,
-//         name: "Strawberry",
-//         imgUrl: "main_images/strawberry.jpg"
-//     },
-//     {
-//         id: 8,
-//         name: "Vanilla",
-//         imgUrl: "main_images/vanilla.jpg"
-//     }
-// ];
+//const flavors = [];
+const flavors = [
+    {
+        id: 0,
+        name: "Blackberry",
+        imgUrl: "main_images/blackberry.jpg"
+    },
+    {
+        id: 1,
+        name: "Chocolate",
+        imgUrl: "main_images/chocolate.jpg"
+    },
+    {
+        id: 2,
+        name: "Cookies & Cream",
+        imgUrl: "main_images/cookies.jpg"
+    },
+    {
+        id: 3,
+        name: "Cotton Candy",
+        imgUrl: "main_images/cotton_candy.jpg"
+    },
+    {
+        id: 4,
+        name: "Mango",
+        imgUrl: "main_images/mango.jpg"
+    },
+    {
+        id: 5,
+        name: "Pistachio",
+        imgUrl: "main_images/pistachio.jpg"
+    },
+    {
+        id: 6,
+        name: "Toffee",
+        imgUrl: "main_images/toffee.jpg"
+    },
+    {
+        id: 7,
+        name: "Strawberry",
+        imgUrl: "main_images/strawberry.jpg"
+    },
+    {
+        id: 8,
+        name: "Vanilla",
+        imgUrl: "main_images/vanilla.jpg"
+    }
+];
 
 //This function gets a name and image url then saves it to the flavor array
 function addFlavor(){
