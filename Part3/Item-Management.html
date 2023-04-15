@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Management</title>
+    <link rel="stylesheet" href="./itemstyles.css">
+</head>
+<body>
+
+    <div class="container"><td>
+        <button class="navbar" > <a href="./Main-Page.html">Home</a></button>
+        <button class="navbar" > <a href="./Main-Page.html">Log Out</a></button></td>
+                    <h1>Item Management</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product</th>
+                    <th>Image URL</th>
+                </tr>
+            </thead>
+
+            <tbody id="tflavor">
+                
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>Flavor Name:<input type="text" id="title"></td>
+                    <td>Flavor Image URL:<input type="text" id="URL"></td>
+                    <td><button class="add" id="add" onclick="addFlavor()">Add A Flavor</button></td>
+                </tr>
+                <tr>
+                    <td>Enter ID of flavor you would like to delete:
+                        <input type="text" id="deleteID">
+                    </td>
+                    <td>
+                        <button class="delete" id="delete" onclick="deleteFlavor()">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <td>
+                        Enter the id of the flavor you would like to update:
+                        <input type="text" id="updateId">
+                    </td>
+                    <td>
+                        Enter the flavors new name:
+                        <input type="text" id="updateName">
+                    </td>
+                    <td>
+                        Enter the flavors new image URL:
+                        <input type="text" id="updateUrl">
+                    </td>
+                    <td>
+                        <button id="updateButton" onclick="updateFlavor()">Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="Item-Management.js"></script>
+</body>
+</html>
