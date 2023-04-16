@@ -26,7 +26,7 @@
 
     <h1>Checkout</h1>
 
-    <form onsubmit="return validateForm()">
+    <form id="form" onsubmit="return validateForm()">
         <div class="ContactInfo">
             <h2>Contact Information</h2>
             <p>Name</p>
@@ -71,6 +71,8 @@
             }
             document.getElementById('cart').textContent = items_array;
             document.getElementById('cart_total').textContent = "Cart total: $"+ cart_total;
+            localStorage.setItem('cart_total', cart_total);
+            localStorage.setItem('cart', items_array);
 
             function validateName() {
                 const nameInput = document.getElementById('Name');
@@ -185,6 +187,31 @@
 
                 return true;
             }
+        </script>
+    
+         <script>
+            const form = document.getElementById('form');
+            const name = document.getElementById('Name');
+            const email = document.getElementById('Email');
+            const phone = document.getElementById('Phone');
+            const address = document.getElementById('Address')
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const nameValue = name.value;
+                const emailValue = email.value;
+                const phoneValue = phone.value;
+                const addressValue = address.value;
+
+                localStorage.setItem('name', nameValue);
+                localStorage.setItem('email', emailValue);
+                localStorage.setItem('phone', phoneValue);
+                localStorage.setItem('address', addressValue);
+                window.location.href = 'SubmitForm.html'
+
+            })
+            
         </script>
     </body>
     </html>
