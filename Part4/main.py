@@ -6,6 +6,15 @@ app = Flask(__name__)
 def home():
   return render_template("Main-Page.html")
 
+@app.route("/Main-Page.html")
+def home1():
+  return render_template("Main-Page.html")
+
+@app.route("/Checkout.html")
+def checkout():
+  return render_template("Checkout.html")
+
+
 #API for flavors/prices?
 #@app.route("/")
 #def my_items():
