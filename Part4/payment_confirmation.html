@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+  </head>
+  <body>
+  <div id="project">
+
+
+  <!-- actual usable content -->
+  <div id="centered-box">
+
+    <div class="grid">
+      <a class="aws-button darkblue grid-center animated fade-in" href="Main-Page.html">Click Here To Go HomePage</a>
+      <p class="grid-center animated fade-out"><i class="fas fa-check"></i>Your payment has been recieved</p>
+    </div>
+    <p><strong>Thank you for your payment!</strong> A receipt will be emailed to the address registered to your account.</p>
+  </div>
+  <!-- End of usable content -->
+
+
+  </div>
+  <style>
+    #centered-box {
+      width: 700px;
+      height: calc(700px / 2.4);
+      background-color: white;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), 10px 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #centered-box .grid {
+      margin-bottom: 20px;
+      display: grid;
+      grid: 1fr/1fr;
+      grid-template-areas: "box";
+      place-items: center;
+    }
+    #centered-box .grid .grid-center {
+      grid-area: box;
+    }
+    #centered-box button {
+      cursor: pointer;
+    }
+    #centered-box p {
+      max-width: 350px;
+      margin: 0;
+      font: 300 15px interstate;
+      color: #005571;
+    }
+    #centered-box p strong {
+      font-weight: 600;
+    }
+    #centered-box p i {
+      margin-right: 8px;
+      font-size: 18px;
+      color: #83cd3e;
+    }
+
+    .aws-button {
+      display: inline-block;
+      padding: 9px 18px;
+      font: 500 17px interstate !important;
+      text-decoration: none !important;
+      white-space: nowrap;
+      appearance: none;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .aws-button.darkblue {
+      background-color: #005571;
+      color: white !important;
+    }
+    .aws-button.darkblue:hover, .aws-button.darkblue:focus {
+      background-color: #0bc3ff;
+    }
+
+    .animated.fade-in {
+      visibility: hidden;
+      animation: fade-in 0.5s 4s forwards;
+    }
+    .animated.fade-out {
+      visibility: hidden;
+      animation: fade-in 0.5s 0.3s forwards, fade-out 0.5s 3.7s forwards;
+    }
+
+    @keyframes fade-in {
+      from {
+        transform: translatey(20px);
+        visibility: hidden;
+        opacity: 0;
+      }
+      to {
+        transform: translatey(0px);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    @keyframes fade-out {
+      from {
+        transform: translatey(0px);
+        visibility: visible;
+        opacity: 1;
+      }
+      to {
+        transform: translatey(-20px);
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+    /* centering in codepen viewport */
+    html,
+    body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background: #0bc3ff;
+    }
+
+    #project {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    #project > div:first-of-type {
+      align-self: center;
+    }
+  </style>
+  </body>
+</html>
