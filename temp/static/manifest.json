@@ -1,0 +1,15 @@
+{
+    "id": "Ice Cream Shop",
+    "short_name": "Ice Cream Shop",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#fdfdfd",
+    "theme_color": "#00fbf4",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "main_images/icon.png",
+            "type": "image/png","sizes": "512x512"
+        }
+    ]
+}
