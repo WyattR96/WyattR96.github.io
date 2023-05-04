@@ -1,4 +1,5 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, send_from_directory
+import flask_sqlalchemy
 
 app = Flask(__name__)
 
@@ -26,6 +27,17 @@ def itemManagement():
 @app.route("/SubmitForm.html")
 def submit():
     return render_template('SubmitForm.html')
+@app.route("/manifest.json")
+def manifest():
+    return send_from_directory('static','manifest.json')
+
+@app.route("/js/app.js")
+def app_js():
+    return send_from_directory('static','js/app.js')
+
+@app.route("/serviceWorker.js")
+def serviceWorker():
+    return send_from_directory('static','js/serviceWorker.js')
 
 
 if __name__ == '__main__':
