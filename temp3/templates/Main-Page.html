@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{{url_for('static',filename='Main-Page_Stylesheet.css')}}">
-    <link rel="manifest" href="{{url_for('static',filename='manifest.json')}}"
+    <link rel="manifest" href="{{url_for('static',filename='manifest.json')}}">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
             <div class="image" id="{{ flavor['name'] }} ">
                 <img class="img" src="{{url_for('static',filename=flavor['url'])}}">
                 <div class="image_overlay">
-                    <button class="flavor" onclick="sendToCart()">{{ flavor['name'] }}</button>
+                    <button class="flavor">{{ flavor['name'] }}</button>
                 </div>
             </div>
 
