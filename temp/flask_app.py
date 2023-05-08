@@ -1,16 +1,46 @@
-from flask import Flask, render_template, url_for, send_from_directory
-import flask_sqlalchemy
+from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
+from flask_sqlalchemy import SQLAlchemy
+import os
+
+from sqlalchemy import ForeignKey
 
 app = Flask(__name__)
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+
+db = SQLAlchemy(app)
+
+class Flavors(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String(50))
+    name = db.Column(db.String(50))
+
+class Customers(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+    email = db.Column(db.String(50))
+
+class Employees(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(50))
+
+class Orders(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    items = db.Column(db.PickleType())
+
 
 
 @app.route("/")
 def main():
-    return render_template('Main-Page.html')
+    fla = Flavors.query.all()
+    return render_template('Main-Page.html', flavors=fla)
 
 @app.route("/Main-Page.html")
 def mainPage():
-    return render_template('Main-Page.html')
+    fla = Flavors.query.all()
+    return render_template('Main-Page.html', flavors=fla)
 
 @app.route("/Login.html")
 def login():
@@ -20,13 +50,15 @@ def login():
 def checkout():
     return render_template('Checkout.html')
 
-@app.route("/Item-Management.html")
+@app.route("/Item-Management.html", methods=['GET','POST'])
 def itemManagement():
-    return render_template('Item-Management.html')
+    fla = Flavors.query.all()
+    return render_template('Item-Management.html', flavors=fla)
 
 @app.route("/SubmitForm.html")
 def submit():
     return render_template('SubmitForm.html')
+
 @app.route("/manifest.json")
 def manifest():
     return send_from_directory('static','manifest.json')

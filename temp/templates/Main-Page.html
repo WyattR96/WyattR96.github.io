@@ -30,7 +30,15 @@
     </div>
 
     <div class="main_body" id="main_body">
-    
+        {% for flavor in flavors %}
+            <div class="image" id="{{ flavor['name'] }} ">
+                <img class="img" src="{{url_for('static',filename=flavor['url'])}}">
+                <div class="image_overlay">
+                    <button class="flavor" onclick="sendToCart()">{{ flavor['name'] }}</button>
+                </div>
+            </div>
+            
+        {% endfor %}
 
     </div>
 
@@ -64,7 +72,7 @@
 
     </script> -->
     
-    <!--script src="Main-Page.js"></script-->
+    <!--script src="{{url_for('static',filename='js/Main-Page.js')}}"></script-->
     <script type="text/javascript" src="{{url_for('static',filename='js/app.js')}}"></script>
 </body>
 </html>
