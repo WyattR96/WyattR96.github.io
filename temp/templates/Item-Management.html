@@ -40,21 +40,24 @@
         </tbody>
       </table>
     </div>
-
     <div id="add-product">
       <h2>Add Product</h2>
-      <form onsubmit="addFlavor(); return false;">
+      <form method="POST">
+
         <label for="title">Name:</label>
-        <input type="text" id="title" name="title" required /><br />
+        <input type="text" id="title" name="title" enctype="multipart/form-data" required /><br />
+
         <label for="URL">Image URL:</label>
         <input type="text" id="URL" name="URL" required /><br />
-        <input type="submit" value="Add" />
+
+        <input type="submit" value="Add" id="addSubmit" onclick="refresh()"/>
+
       </form>
     </div>
 
     <div id="update-product">
       <h2>Update Product</h2>
-      <form onsubmit="updateFlavor(); return false;">
+      <form method="POST">
         <label for="updateId">ID:</label>
         <input type="text" id="updateId" name="updateId" required /><br />
         <label for="updateName">Name:</label>
@@ -67,13 +70,18 @@
 
     <div id="delete-product">
         <h2>Delete Product</h2>
-        <form onsubmit="deleteFlavor(); return false;">
+        <form method="POST">
           <label for="deleteID">ID:</label>
           <input type="text" id="deleteID" name="deleteID" required /><br />
           <input type="submit" value="Delete" />
         </form>
       </div>
 
+      <script>
+        function refresh(){
+          location.reload();
+        }
+      </script>
       <!-- <script>
         window.onload = function () {
           loadFlavors();
