@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product Management</title>
+
+    <link rel="stylesheet" href="{{url_for('static',filename='itemstyles.css')}}">
+
+  </head>
+  <nav>
+    <ul>
+        <li><a href="Main-Page.html">Home</a></li>
+        <li><a href="Checkout.html">Checkout</a></li>
+        <li Style="float:right"><a href="Main-Page.html">Logout</a></li>
+    </ul>
+</nav>
+  <body>
+    <h1>Product Management</h1>
+    <div class="clearfix"></div>
+      <h2>Product List</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Image URL</th>
+          </tr>
+        </thead>
+        <tbody id="flavor-list">
+
+          {% for flavor in flavors %}
+          <tr id="flavor">
+            <td>{{ flavor['id'] }}</td>
+            <td>{{ flavor['name'] }}</td>
+            <td>{{ flavor['url'] }}</td>
+          </tr>
+
+        {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    <div id="add-product">
+      <h2>Add Product</h2>
+      <form method="POST" >
+
+        <label for="title">Name:</label>
+        <input type="text" id="title" name="title" enctype="multipart/form-data" required /><br />
+
+        <label for="URL">Image URL:</label>
+        <input type="text" id="URL" name="URL" required /><br />
+
+        <input type="submit" value="Add" id="addSubmit" onclick="refresh()"/>
+
+      </form>
+    </div>
+
+    <div id="update-product">
+      <h2>Update Product</h2>
+      <form method="POST" >
+        <label for="updateId">ID:</label>
+        <input type="text" id="updateId" name="updateId" required /><br />
+        <label for="updateName">Name:</label>
+        <input type="text" id="updateName" name="updateName" required /><br />
+        <label for="updateUrl">Image URL:</label>
+        <input type="text" id="updateUrl" name="updateUrl" required /><br />
+        <input type="submit" value="Update" />
+      </form>
+    </div>
+
+    <div id="delete-product">
+        <h2>Delete Product</h2>
+        <form method="POST" >
+          <label for="deleteID">ID:</label>
+          <input type="text" id="deleteID" name="deleteID" required /><br />
+          <input type="submit" value="Delete" />
+        </form>
+      </div>
+
+      <script>
+        function refresh(){
+          location.reload();
+        }
+      </script>
+
+
+    <!--<script src="../static/js/Item-Management.js"></script>---->
+
+
+
+      <!-- <script>
+        window.onload = function () {
+          loadFlavors();
+          toggleList();
+        };
+
+        function toggleList() {
+          const productList = document.getElementById("product-list");
+          const button = document.querySelector("button");
+          button.addEventListener("click", () => {
+            if (productList.style.display === "none") {
+              productList.style.display = "block";
+              button.innerHTML = "Close";
+              listFlavors();
+            } else {
+              productList.style.display = "none";
+              button.innerHTML = "Open";
+            }
+          });
+        }
+
+        function listFlavors() {
+          const flavorList = document.getElementById("flavor-list");
+          flavorList.innerHTML = "";
+          flavors.forEach((flavor) => {
+            const row = `
+              <tr>
+                <td>${flavor.id}</td>
+                <td>${flavor.name}</td>
+                <td>${flavor.imgUrl}</td>
+                <td>
+
+                  <button onclick="deleteFlavor(${flavor.id})">Delete</button>
+                </td>
+              </tr>
+            `;
+            flavorList.innerHTML += row;
+          });
+        }
+
+        function addFlavor() {
+          const nameInput = document.getElementById("title");
+          const urlInput = document.getElementById("URL");
+          const lastId = flavors.length > 0 ? flavors[flavors.length - 1].id : -1;
+          const newFlavor = {
+            id: lastId + 1,
+            name: nameInput.value,
+            imgUrl: urlInput.value,
+          };
+          flavors.push(newFlavor);
+          save();
+          listFlavors();
+          nameInput.value = "";
+          urlInput.value = "";
+        }
+
+        function deleteFlavor(id) {
+          const index = flavors.findIndex((flavor) => flavor.id === id);
+          if (index !== -1) {
+            flavors.splice(index, 1);
+            save();
+            listFlavors();
+          } else {
+            alert("Flavor not found");
+          }
+        }
+
+        function editFlavor(id) {
+          const index = flavors.findIndex((flavor) => flavor.id === id);
+          if (index !== -1) {
+            const flavor = flavors[index];
+            document.getElementById("updateId").value = flavor.id;
+            document.getElementById("updateName").value = flavor.name;
+            document.getElementById("updateUrl").value = flavor.imgUrl;
+          } else {
+            alert("Flavor not found");
+          }
+        }
+
+        function updateFlavor() {
+          const idInput = document.getElementById("updateId");
+          const nameInput = document.getElementById("updateName");
+          const urlInput = document.getElementById("updateUrl");
+          const id = parseInt(idInput.value);
+          const index = flavors.findIndex((flavor) => flavor.id === id);
+          if (index !== -1) {
+            flavors[index].name = nameInput.value;
+            flavors[index].imgUrl = urlInput.value;
+            save();
+            listFlavors();
+            idInput.value = "";
+            nameInput.value = "";
+            urlInput.value = "";
+          } else {
+            alert("Flavor not found");
+          }
+        }
+
+        function save() {
+          localStorage.setItem("flavors", JSON.stringify(flavors));
+        }
+
+        function loadFlavors() {
+            const savedFlavors = JSON.parse(localStorage.getItem("flavors"));
+            if (savedFlavors !== null) {
+            flavors.push(...savedFlavors);
+            listFlavors();
+            }
+            }
+            </script> -->
+
+              </body>
+            </html>

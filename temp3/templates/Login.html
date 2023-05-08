@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='Login-Stylesheet.css')}}">
+    <title>Login</title>
+    <script src="/static/js/Login.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="Main-Page.html">Home</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
+            <li Style="float:right"><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section id="section1">
+        <p>UserName</p>
+        <input type="text" name="User" id="User">
+        <p>Password</p>
+        <input type="password" name="Pass" id="Pass">
+        <p><button type="submit" id="Login" onclick="login()">Login</button></p>
+    </section>
+</body>
+</html>
