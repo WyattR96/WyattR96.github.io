@@ -38,11 +38,10 @@
         </ul>
     </nav>
 
-    <h1 class="problem">Selected Items:</h1>
+    <h1 class="problem">Selected Items: </h1>
 
     <div class="SelectedItems">
-        <p id="cart"></p>
-        <p id="cart_total"></p>
+        {{ items }}
     </div>
 
     <h1>Checkout</h1>
@@ -54,7 +53,7 @@
         <p>Email<input type='text' name="Email"/></p>
         <p>Submit <input type='submit' name="submit"/></p>-->
 
-
+        <input name="item" id="item" value="{{ items }}" hidden/>
         <div class="ContactInfo">
             <h2>Contact Information</h2>
             <p>Name</p>

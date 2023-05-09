@@ -13,7 +13,7 @@
     <nav>
         <ul>
             <li><a href="Main-Page.html">Home</a></li>
-            <li><a href="Checkout.html">Checkout</a></li>
+            
             <li Style="float:right"><a href="Login.html">Login</a></li>
         </ul>
     </nav>
@@ -31,13 +31,16 @@
 
     <div class="main_body" id="main_body">
         {% for flavor in flavors %}
-            <div class="image" id="{{ flavor['name'] }} ">
-                <img class="img" src="{{url_for('static',filename=flavor['url'])}}">
-                <div class="image_overlay">
-                    <button class="flavor">{{ flavor['name'] }}</button>
+            <form method="POST">
+                <div class="image" id="{{ flavor['id'] }} ">
+                    <input name="select" value="{{ flavor['name'] }}" hidden/>
+                    <img class="img" src="{{url_for('static',filename=flavor['url'])}}">
+                    <div class="image_overlay">
+                        <input type="submit" class="flavor" value="{{ flavor['name'] }}"/>
+                    </div>
                 </div>
-            </div>
-
+            </form>
+            
         {% endfor %}
 
     </div>
