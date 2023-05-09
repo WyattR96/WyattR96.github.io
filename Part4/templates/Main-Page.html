@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='Main-Page_Stylesheet.css')}}">
+    <link rel="manifest" href="{{url_for('static',filename='manifest.json')}}"
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="Main-Page.html">Home</a></li>
+            <li><a href="Checkout.html">Checkout</a></li>
+            <li Style="float:right"><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+    
+    <center>
+
+    <div class="header">
+        <h1>Your Favorite Ice Cream Shop</h1> 
+    </div>
+
+    <div>
+        <h2>Our Flavors</h2> 
+        <p id="price">One cone with one scoop: $1.99</p>
+    </div>
+
+    <div class="main_body" id="main_body">
+        {% for flavor in flavors %}
+            <div class="image" id="{{ flavor['name'] }} ">
+                <img class="img" src="{{url_for('static',filename=flavor['url'])}}">
+                <div class="image_overlay">
+                    <button class="flavor" onclick="sendToCart()">{{ flavor['name'] }}</button>
+                </div>
+            </div>
+            
+        {% endfor %}
+
+    </div>
+
+    <div class="main_body">
+        <button id="submit" onclick="sentToCart()">Send To Cart</button>
+    </div>
+    </center>
+
+    <script>
+
+        items = [];  //array to store selected flavors
+        let btns = document.querySelectorAll("button.flavor"); //selecting buttons w/ class "flavor"
+
+        function sentToCart(){  //sending selected flavor to cart by writing to JSON file
+           let data = JSON.stringify(items);  //converting to string
+
+           localStorage.setItem('selectedItems', data);  //storing in local storage
+           window.location.href = 'Checkout.html';  //redirecting to checkout page
+
+        
+
+           fetch('/api/order', {  //sending data to server
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json'
+               },
+               body: data
+           })
+           .then(response => response.json())
+           .then(data => {
+               console.log('Success:', data);
+               localStorage.setItem('selectedItems', data);
+               window.location.href = 'Checkout.html';
+           })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+       
+        }
+        for (let btn of btns){    //adding event handler to each flavor button
+            btn.addEventListener("click", function (){  //function that both alerts user of selected flavor and adds to cart
+                let txt = btn.textContent;  //getting button text
+                items.push({id: txt});   // adding to items array
+                let flavor_div = document.getElementById(txt); //getting id of selected div
+                flavor_div.style.backgroundColor = ("#00CED1"); //changing background color of selcted div
+            });
+       }
+
+       let submit_btn = document.querySelector("#submit");
+       submit_btn.addEventListener("click", sentToCart)
+
+    </script>
+    
+    <!--script src="{{url_for('static',filename='js/Main-Page.js')}}"></script-->
+    <script type="text/javascript" src="{{url_for('static',filename='js/app.js')}}"></script>
+</body>
+</html>
