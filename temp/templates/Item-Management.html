@@ -18,7 +18,7 @@
     <h1>Product Management</h1>
     <div class="clearfix"></div>
       <h2>Product List</h2>
-      <table>
+      <!-- <table>
         <thead>
           <tr>
             <th>ID</th>
@@ -38,7 +38,8 @@
         {% endfor %}
 
         </tbody>
-      </table>
+      </table> -->
+      <table id="myTable"></table>
     </div>
     <div id="add-product">
       <h2>Add Product</h2>
@@ -82,6 +83,28 @@
           location.reload();
         }
       </script>
+      <script>
+        fetch('/api/flavors') // replace this with the URL of your Flask API endpoint
+        .then(response => response.json())
+        .then(data => {
+          let table = document.getElementById('myTable');
+          let headers = Object.keys(data[0]);
+          let headerRow = table.insertRow();
+          headers.forEach(header => {
+            let th = document.createElement('th');
+            th.innerText = header;
+            headerRow.appendChild(th);
+          });
+          data.forEach(rowData => {
+            let row = table.insertRow();
+            headers.forEach(header => {
+              let cell = row.insertCell();
+              cell.innerText = rowData[header];
+            });
+          });
+        });
+      </script>
+    
       <!-- <script>
         window.onload = function () {
           loadFlavors();

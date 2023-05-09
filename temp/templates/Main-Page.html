@@ -47,17 +47,37 @@
     </div>
     </center>
 
-    <!-- <script>
+    <script>
 
         items = [];  //array to store selected flavors
         let btns = document.querySelectorAll("button.flavor"); //selecting buttons w/ class "flavor"
 
         function sentToCart(){  //sending selected flavor to cart by writing to JSON file
            let data = JSON.stringify(items);  //converting to string
-           localStorage.setItem('selectedItems', data);
-           window.location.href = 'checkout.html';
-       }
 
+           localStorage.setItem('selectedItems', data);  //storing in local storage
+           window.location.href = 'Checkout.html';  //redirecting to checkout page
+
+        
+
+           fetch('/api/order', {  //sending data to server
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json'
+               },
+               body: data
+           })
+           .then(response => response.json())
+           .then(data => {
+               console.log('Success:', data);
+               localStorage.setItem('selectedItems', data);
+               window.location.href = 'Checkout.html';
+           })
+              .catch((error) => {
+                console.error('Error:', error);
+              });
+       
+        }
         for (let btn of btns){    //adding event handler to each flavor button
             btn.addEventListener("click", function (){  //function that both alerts user of selected flavor and adds to cart
                 let txt = btn.textContent;  //getting button text
@@ -70,7 +90,7 @@
        let submit_btn = document.querySelector("#submit");
        submit_btn.addEventListener("click", sentToCart)
 
-    </script> -->
+    </script>
     
     <!--script src="{{url_for('static',filename='js/Main-Page.js')}}"></script-->
     <script type="text/javascript" src="{{url_for('static',filename='js/app.js')}}"></script>

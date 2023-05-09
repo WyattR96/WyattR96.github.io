@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 import os
+from flask import jsonify
 
 from sqlalchemy import ForeignKey
 
@@ -39,6 +40,18 @@ class Orders(db.Model):
 def main():
     fla = Flavors.query.all()
     return render_template('Main-Page.html', flavors=fla)
+
+@app.route("/api/flavors", methods=["GET"])
+def api_flavors():
+    flavors = Flavors.query.all()
+    flavors_json = []
+    for flavor in flavors:
+        flavors_json.append({
+            "id": flavor.id,
+            "name": flavor.name,
+            "url": flavor.url
+        })
+    return jsonify(flavors_json)
 
 
 @app.route("/Main-Page.html")
@@ -107,6 +120,23 @@ def app_js():
 @app.route("/serviceWorker.js")
 def serviceWorker():
     return send_from_directory('static', 'js/serviceWorker.js')
+
+@app.route("/api/order", methods=['POST'])
+def add_to_cart():
+    items = request.json
+    new_order = Orders(items=items)
+    db.session.add(new_order)
+    db.session.commit()
+    return jsonify({"id": new_order.id, "message": "Items added to cart successfully."})
+
+
+@app.route("/api/order", methods=['GET'])
+def get_cart():
+    orders = Orders.query.all()
+    result = []
+    for order in orders:
+        result.append({"id": order.id, "items": order.items})
+    return jsonify(result)
 
 
 if __name__ == '__main__':
